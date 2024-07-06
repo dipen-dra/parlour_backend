@@ -7,10 +7,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface Parlour_serviceService {
-    List<Parlour_service> getAllBarberService();
-    Optional<Parlour_service> getBarberServiceById(Long barber_service_id);
-    Parlour_service createBarberService(Parlour_servicePojo barberServicePojo);
-    Parlour_service updateBarberServiceById(Long barber_service_id, Parlour_servicePojo barberServicePojo);
-    void deleteBarberServiceById(Long barber_service_id);
-
+    List<Parlour_service> getAllParlourServices();
+    Optional<Parlour_service> getParlourServiceById(Long parlour_service_id);
+    Parlour_service createParlourService(Parlour_servicePojo parlourServicePojo);
+    Parlour_service updateParlourServiceById(Long parlour_service_id, Parlour_servicePojo parlourServicePojo);
+    void deleteParlourServiceById(Long parlour_service_id);
 }

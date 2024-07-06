@@ -16,31 +16,27 @@ public class Parlour_serviceServiceImpl implements Parlour_serviceService {
 
     private final Parlour_serviceRepository parlourServiceRepository;
 
-    // For getting all information at once
     @Override
-    public List<Parlour_service> getAllBarberService() {
+    public List<Parlour_service> getAllParlourServices() {
         return parlourServiceRepository.findAll();
     }
 
-    // By id
     @Override
-    public Optional<Parlour_service> getBarberServiceById(Long parlour_service_id) {
+    public Optional<Parlour_service> getParlourServiceById(Long parlour_service_id) {
         return parlourServiceRepository.findById(parlour_service_id);
     }
 
-    // Create service
     @Override
-    public Parlour_service createBarberService(Parlour_servicePojo parlourServicePojo) {
+    public Parlour_service createParlourService(Parlour_servicePojo parlourServicePojo) {
         Parlour_service parlourService = new Parlour_service();
-        // Set the necessary fields from Parlour_servicePojo to Parlour_service
+        // Set necessary fields from Parlour_servicePojo to Parlour_service
         parlourService.setStatus(parlourServicePojo.getStatus());
         // Add more fields if necessary
         return parlourServiceRepository.save(parlourService);
     }
 
-    // Save or update service
     @Override
-    public Parlour_service updateBarberServiceById(Long parlour_service_id, Parlour_servicePojo parlourServicePojo) {
+    public Parlour_service updateParlourServiceById(Long parlour_service_id, Parlour_servicePojo parlourServicePojo) {
         Optional<Parlour_service> optionalParlourService = parlourServiceRepository.findById(parlour_service_id);
         if (optionalParlourService.isPresent()) {
             Parlour_service parlourService = optionalParlourService.get();
@@ -51,9 +47,8 @@ public class Parlour_serviceServiceImpl implements Parlour_serviceService {
         return null; // Or throw an exception if the service with the given id is not found
     }
 
-    // Delete service
     @Override
-    public void deleteBarberServiceById(Long parlour_service_id) {
+    public void deleteParlourServiceById(Long parlour_service_id) {
         parlourServiceRepository.deleteById(parlour_service_id);
     }
 }

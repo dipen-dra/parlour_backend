@@ -7,9 +7,9 @@ import lombok.Setter;
 @Setter
 public class Parlour_servicePojo {
 
-    private Long barberServiceId;
+    private Long parlourServiceId;
     private String status;
-    private Long barberId;
+    private Long beauticianId;
     private Long serviceId;
     private Long appointmentId;
 
